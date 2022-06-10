@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * 트리 순회 1991
+ * https://www.acmicpc.net/problem/1991
+ */
 public class Boj_1991 {
 
     static int N;
@@ -53,10 +57,14 @@ public class Boj_1991 {
             String line = br.readLine();
 
             char node = line.charAt(0);
+
             char left = line.charAt(2);
-            if (left != '.') arr[node - 'A'].left = arr[left - 'A'];
+            if (left != '.')
+                arr[node - 'A'].left = arr[left - 'A']; // 노드 붙이기
             char right = line.charAt(4);
-            if (right != '.') arr[node - 'A'].right = arr[right - 'A'];
+
+            if (right != '.')
+                arr[node - 'A'].right = arr[right - 'A'];
         }
 
         preorder(arr[0]);
