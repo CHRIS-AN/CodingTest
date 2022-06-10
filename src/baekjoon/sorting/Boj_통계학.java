@@ -12,6 +12,8 @@ import java.util.*;
  *
  *  총 4개의 값을 출력 해야하는 문제.
  *  차근차근 하나씩 해결해나가면 될 문제였습니다.
+ *
+ *  Scanner -> BufferedReader 사용 시, 메모리 1/3 막, 시간복잡도 1/2 토막
  */
 public class Boj_통계학 {
     static int[] result = new int[4];
