@@ -6,7 +6,6 @@ import java.util.*;
  * https://programmers.co.kr/learn/courses/30/lessons/17684
  *
  * Lv2 - KAKAO BLAND
- *
  *  구현 쪽 문제라, 문제에서 언급한 걸 하나하나 해주면 됨.
  */
 public class Pro_압축 {
@@ -64,6 +63,9 @@ public class Pro_압축 {
         return list;
     }
 
+    /*
+        pair Programming
+
     public static List<Integer> solution2(String msg) {
         List<Integer> answer = new ArrayList<>();
 
@@ -92,4 +94,6 @@ public class Pro_압축 {
         answer.add(dict.get(temp));
         return answer;
     }
+
+     */
 }
