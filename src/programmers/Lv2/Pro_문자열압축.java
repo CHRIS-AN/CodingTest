@@ -2,39 +2,41 @@ package programmers.Lv2;
 
 public class Pro_문자열압축 {
     public static int solution(String s) {
-        if (s.length() == 1) return 1;
+        int len = s.length();
+        if (len == 1) return 1;
         int min = Integer.MAX_VALUE;
-        int length = s.length();
 
-        for (int size = 1; size <= length / 2; size++) {
+        for (int cpSize = 1; cpSize <= len / 2; cpSize++) {
             int count = 1;
-            int mod = length % size;
+            int mod = len % cpSize;
             int sLength = mod;
-            int lastCursor = length - mod - 2 * size;
+            int lastCursor = len - mod - (2 * cpSize);
 
-            for (int i = 0; i <= lastCursor; i += size) {
-                String first = s.substring(i, i + size);
-                String second = s.substring(i + size, i + 2 * size);
+            for (int i = 0; i <= lastCursor; i += cpSize) {
+                String first = s.substring(i, i + cpSize);
+                String second = s.substring(i + cpSize, i + (2 * cpSize));
 
                 // first 랑 second 같을 때
                 if (first.equals(second)) {
                     count++;
                     if (i == lastCursor)
-                        sLength += second.length() + String.valueOf(count).length();
+                        sLength += cpSize + String.valueOf(count).length();
                 }
 
                 //first 랑 second 다를 때
                 else {
-                    if (i == lastCursor) sLength += second.length();
+                    if (i == lastCursor) sLength += cpSize;
+
                     if (count > 1) {
-                        sLength += first.length() + String.valueOf(count).length();
-                    } else {
-                        sLength += first.length();
+                        sLength += cpSize + String.valueOf(count).length();
+                    }else {
+                        sLength += cpSize;
                     }
-                    count = 1;
+
+                    count = 1; // 다시 cnt 초기화
                 }
             }
-            //sLength += mod;
+
             min = Math.min(sLength, min);
         }
         return min;
