@@ -4,6 +4,7 @@ public class 소수를판별하는코드 {
     public static boolean isPrime3(int num) {
         boolean result = true;
         int end = (int)Math.sqrt(num);
+
         for(int i = 2; i <= end; i++) {
             if( num%i == 0) {
                 result = false;
