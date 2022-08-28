@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-public class Pro_단어수학 {
+public class Boj_단어수학 {
     static int N;
     static int max = Integer.MIN_VALUE;
     static List<String> inputDataArr = new ArrayList<>();
